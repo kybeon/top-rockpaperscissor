@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+</head>
+<body>
+
+<script>
+
+// Rock > Scissor
+// Paper > Rock
+// Scissor > Paper
+
+// Serve para declarar que esta 0-0 e para guardar o resultado
+let userScore = parseInt(0);
+let compScore = parseInt(0);
+
+// Seleciona do array(option) um dos resultados(0, 1, 2) aleatoriamente(rndm)
+function getComputerChoice() {
+    let option = ["rock", "paper", "scissor"];
+    let rndm = Math.floor(Math.random() * option.length)
+    return option[rndm];
+}
+// Faz a verificacao de quem ganha na ronda (&&(e) ||(ou)) e incrementa valor no resultado
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "It's a tie";
+    } else if (
+        (playerSelection === "rock" && computerSelection === "scissor") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissor" && computerSelection === "paper")
+    ) {
+        userScore++;
+        return "You win!";
+    } else {
+        compScore++;
+        return "Computer wins!";
+    }
+}
+
+// Loop para jogar 5 rondas 
+for (let i=0; i<5; i++) {
+    let playerSelection = prompt("Choose Rock, Paper or Scissor").toLowerCase();
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log("Your score = " + userScore);
+    console.log("Computer's score =" + compScore);
+}
+
+</script>
+
+</body>
+</html>
