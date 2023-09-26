@@ -9,21 +9,20 @@
 
 <script>
 
-// Rock > Scissor
-// Paper > Rock
-// Scissor > Paper
 
-// Serve para declarar que esta 0-0 e para guardar o resultado
 let userScore = parseInt(0);
 let compScore = parseInt(0);
 
-// Seleciona do array(option) um dos resultados(0, 1, 2) aleatoriamente(rndm)
 function getComputerChoice() {
     let option = ["rock", "paper", "scissor"];
     let rndm = Math.floor(Math.random() * option.length)
     return option[rndm];
 }
-// Faz a verificacao de quem ganha na ronda (&&(e) ||(ou)) e incrementa valor no resultado
+
+// Rock > Scissor
+// Paper > Rock
+// Scissor > Paper
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "It's a tie";
@@ -40,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Loop para jogar 5 rondas 
+
 for (let i=0; i<5; i++) {
     let playerSelection = prompt("Choose Rock, Paper or Scissor").toLowerCase();
     let computerSelection = getComputerChoice();
