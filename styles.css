@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30vh;
+    text-align: center;
+}
+
+.points-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
